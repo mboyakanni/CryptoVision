@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import millify from 'millify';
+import { Link } from 'react-router-dom';
+import { Card, Row, Col, Input } from 'antd';
 
-const Cryptocurrencies = () => {
-  return (
-    <div>Cryptocurrencies</div>
-  )
-}
-
-export default Cryptocurrencies
+import { useGetCryptosQuery } from '../services/CryptoApi';
+import Loader from './Loader';
