@@ -19,3 +19,20 @@ const News = ({ simplified }) => {
     newsCategory,
     count: simplified ? 6 : 12,
   });
+
+  if (!cryptoNews?.value) return <Loader />;
+
+  return (
+    <Row gutter={[24, 24]}>
+      {!simplified && (
+        <Col span={24}>
+          <Select
+            showSearch
+            className="select-news"
+            placeholder="Select a Crypto"
+            optionFilterProp="children"
+            onChange={(value) => setNewsCategory(value)}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          ></Select>
