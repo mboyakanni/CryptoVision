@@ -57,3 +57,34 @@ const News = ({ simplified }) => {
                   alt=""
                 />
               </div>
+              <p>
+                {news.description.length > 100
+                  ? `${news.description.substring(0, 100)}...`
+                  : news.description}
+              </p>
+              <div className="provider-container">
+                <div>
+                  <Avatar
+                    src={
+                      news.provider[0]?.image?.thumbnail?.contentUrl ||
+                      demoImage
+                    }
+                    alt=""
+                  />
+                  <Text className="provider-name">
+                    {news.provider[0]?.name}
+                  </Text>
+                </div>
+                <Text>
+                  {moment(news.datePublished).startOf("ss").fromNow()}
+                </Text>
+              </div>
+            </a>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  );
+};
+
+export default News;
