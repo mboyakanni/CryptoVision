@@ -80,7 +80,7 @@ const News = ({ simplified }) => {
                 </Text>
               </div>
             </a>
-          </Card>
+          </Card
         </Col>
       ))}
     </Row>
